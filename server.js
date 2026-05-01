@@ -13,7 +13,13 @@ const port = process.env.PORT;
 app.use(express.json());
 app.use(bodyparser.urlencoded({ extended: true }));
 
-const allowedOrigins = process.env.Allowed_origins ? process.env.Allowed_origins.split(',').map(o => o.trim()) : [];
+//const allowedOrigins = process.env.Allowed_origins ? process.env.Allowed_origins.split(',').map(o => o.trim()) : [];
+const allowedOrigins = [
+  "https://a-k-agencies.vercel.app",
+  "http://localhost:5173",
+  "https://ak-agencies.com",
+  "https://www.ak-agencies.com"
+];
 
 app.use(require('cors')({
     origin: allowedOrigins,
