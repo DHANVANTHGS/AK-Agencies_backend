@@ -13,7 +13,7 @@ const port = process.env.PORT;
 app.use(express.json());
 app.use(bodyparser.urlencoded({ extended: true }));
 
-const allowedOrigins = ['http://localhost:5173'];
+const allowedOrigins = process.env.Allowed_origins ? process.env.Allowed_origins.split(',') : [];
 
 app.use(require('cors')({
     origin: allowedOrigins,
