@@ -13,7 +13,7 @@ const port = process.env.PORT;
 app.use(express.json());
 app.use(bodyparser.urlencoded({ extended: true }));
 
-const allowedOrigins = process.env.Allowed_origins ? process.env.Allowed_origins.split(',') : [];
+const allowedOrigins = process.env.Allowed_origins ? process.env.Allowed_origins.split(',').map(o => o.trim()) : [];
 
 app.use(require('cors')({
     origin: allowedOrigins,
