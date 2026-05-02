@@ -12,6 +12,8 @@ const app = express();
 
 const port = process.env.PORT;
 
+app.set('trust proxy', 1);
+
 app.use(helmet({
     contentSecurityPolicy: false,
     crossOriginEmbedderPolicy: false,
